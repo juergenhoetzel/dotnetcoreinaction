@@ -13,7 +13,7 @@ namespace ConsoleApplication1
             string uri = "http://www.bing.com";
             var firstRequest = MeasureRequest(uri);
             var secondRequest = MeasureRequest(uri);
-            if (firstRequest.Item1 != HttpStatusCode.OK &&
+            if (firstRequest.Item1 != HttpStatusCode.OK ||
                 secondRequest.Item1 != HttpStatusCode.OK)
             {
                 Console.WriteLine("Unexpected status code");
