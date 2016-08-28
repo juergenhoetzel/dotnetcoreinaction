@@ -2,13 +2,10 @@ using System;
 
 namespace BusinessDays
 {
-  public class WeekendRule : IRule
+  public class WeekendRule
   {
-    public bool CheckDate(DateTime date)
-    {
-      return
-        date.DayOfWeek != DayOfWeek.Saturday &&
-        date.DayOfWeek != DayOfWeek.Sunday;
-    }
+    public static bool CheckDate(DateTime date) =>
+        date.DayOfWeek != DayOfWeek.Saturday && date.DayOfWeek != DayOfWeek.Sunday;
   }
 }
+

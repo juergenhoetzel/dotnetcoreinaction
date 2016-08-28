@@ -10,8 +10,8 @@ namespace BusinessDaysTest
     public USRegionFixture()
     {
       Calculator = new BizDayCalc();
-      Calculator.AddRule(new WeekendRule());
-      Calculator.AddRule(new HolidayRule());
+      Calculator.AddRule(WeekendRule.CheckDate);
+      Calculator.AddRule(HolidayRule.CheckDate);
     }
   }
 

@@ -21,7 +21,7 @@ namespace BusinessDaysTest
     public USHolidayTest()
     {
       bizDayCalc = new BizDayCalc();
-      bizDayCalc.AddRule(new HolidayRule());
+      bizDayCalc.AddRule(HolidayRule.CheckDate);
     }
 
     [Theory]

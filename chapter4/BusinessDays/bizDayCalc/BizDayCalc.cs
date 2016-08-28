@@ -1,24 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BusinessDays
 {
   public class BizDayCalc
   {
-    private List<IRule> rules = new List<IRule>();
+    private List<Func<DateTime,bool>> workDayPredicates = new List<Func<DateTime,bool>>();
 
-    public void AddRule(IRule rule)
-    {
-      rules.Add(rule);
+    public void AddRule(Func<DateTime,bool> datePredicate) {
+        workDayPredicates.Add(datePredicate);
     }
 
-    public bool IsBusinessDay(DateTime date)
-    {
-      foreach (var rule in rules)
-        if (!rule.CheckDate(date))
-          return false;
-
-      return true;
-    }
+    public bool IsBusinessDay(DateTime date) => workDayPredicates.All(p => p(date));
   }
 }

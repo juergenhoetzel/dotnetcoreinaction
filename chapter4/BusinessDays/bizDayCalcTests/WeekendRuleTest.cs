@@ -20,8 +20,7 @@ namespace BusinessDaysTest
     [MemberData(nameof(Days))]
     public void TestCheckDate(bool expected, DateTime date)
     {
-      var rule = new WeekendRule();
-      Assert.Equal(expected, rule.CheckDate(date));
+      Assert.Equal(expected, WeekendRule.CheckDate(date));
     }
   }
 }
